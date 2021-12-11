@@ -1,21 +1,21 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
-import profileCloud from "./assets/img/ProfileCloud.jpg";
-import cafeView from "./assets/img/cafeView.jpg";
+import profileCloud from "../assets/img/ProfileCloud.jpg";
 
-function App() {
+const Home = () => {
   return (
     <Container>
       <Left>
         <MyName>Hyeon Sang</MyName>
       </Left>
       <Center>
-        <ImageOne src={profileCloud} alt="profileImage" />
+        <ImageOne src={profileCloud} alt="profileCloud" />
         <BtnContainer>
-          <Btn>Profile</Btn>
-          <Btn>History</Btn>
+          <Link to="/profile">
+            <Btn>Profile</Btn>
+          </Link>
           <Btn>Ideas</Btn>
-          <Btn>Contact</Btn>
           <Btn>Why Me?</Btn>
         </BtnContainer>
         <Phrase>Touch Your Instinct</Phrase>
@@ -25,7 +25,7 @@ function App() {
       </Right>
     </Container>
   );
-}
+};
 
 const Container = styled.div`
   display: flex;
@@ -34,6 +34,7 @@ const Container = styled.div`
   align-items: center;
   width: 100vw;
   height: 100vh;
+  background-color: #fafafa;
 `;
 const Left = styled.div`
   flex: 1;
@@ -55,7 +56,6 @@ const ImageOne = styled.img`
   width: 150px;
   height: 150px;
 `;
-
 const Center = styled.div`
   display: flex;
   flex-direction: column;
@@ -96,4 +96,4 @@ const Btn = styled.button`
   }
 `;
 
-export default App;
+export default Home;
