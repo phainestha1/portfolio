@@ -7,6 +7,7 @@ import {
   AiOutlineGithub,
   AiOutlineHeart,
   AiOutlineLaptop,
+  AiOutlineMail,
 } from "react-icons/ai";
 import { BsLightbulb } from "react-icons/bs";
 import cafeView from "../assets/img/cafeView.jpg";
@@ -53,6 +54,9 @@ const Profile = () => {
               </a>
               <a href="https://github.com/phainestha1">
                 <AiOutlineGithub />
+              </a>
+              <a href="mailto:250wons@gmail.com">
+                <AiOutlineMail />
               </a>
             </SNSLink>
           </Greeting>
@@ -251,7 +255,12 @@ const SNSLink = styled.div`
   font-size: 48px;
   margin-top: 20px;
   a {
-    margin-left: 10px;
+    margin-left: 20px;
+    transition: 0.2s;
+    color: black;
+    :hover {
+      opacity: 0.5;
+    }
   }
   a:visited {
     color: black;
