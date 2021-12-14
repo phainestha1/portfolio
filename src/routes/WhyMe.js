@@ -89,6 +89,7 @@ const WhyMe = () => {
         <Message>
           <h1>MBTI: My Best T-shaped Itelligences</h1>
           <h1>Click and Enjoy MBTI 🔥</h1>
+          <h2>Mine is ENTP tho... 😎</h2>
         </Message>
         <TBox>
           <Teamwork
@@ -160,11 +161,14 @@ const Message = styled.div`
   justify-content: center;
   width: 500px;
   height: 50px;
-  margin: 15px 0;
+  margin: 17px 0;
   h1 {
     font-size: 22px;
     font-weight: 500;
     margin-bottom: 5px;
+  }
+  h2 {
+    margin: 3px 0;
   }
 `;
 const TBox = styled.div`
