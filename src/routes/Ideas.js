@@ -3,7 +3,7 @@ import styled from "styled-components";
 import TopNav from "../components/TopNav";
 import youTubeSignIn from "../assets/img/youTubeSignIn.png";
 import slack from "../assets/img/slack.png";
-import javascript from "../assets/img/javascript.png";
+import noImage from "../assets/img/noImage.jpeg";
 import Project from "../components/ideas/Project";
 import Business from "../components/ideas/Business";
 
@@ -25,7 +25,7 @@ const Ideas = () => {
       link: "https://github.com/phainestha1/nwitter",
     },
     {
-      img: javascript,
+      img: noImage,
       name: "Momentum Clone",
       description: "Cloning Momentum chrome app with vanilla Javascript",
       tech: "Javascript",
@@ -77,26 +77,30 @@ const Ideas = () => {
         <TopNav />
       </TopSection>
       <BodySection>
-        <Title>
-          <h1>Business Insights</h1>
-        </Title>
-        <BusinessPlan>
-          {businessObj.map((business) => (
-            <Business business={business} />
-          ))}
-        </BusinessPlan>
-        <Programming>
+        <BodyLeft>
           <Title>
-            <h1>Projects</h1>
+            <h1>Business Insights</h1>
           </Title>
-          <Description>
-            <DetailInfo>
-              {projectObj.map((project) => (
-                <Project project={project} />
-              ))}
-            </DetailInfo>
-          </Description>
-        </Programming>
+          <BusinessPlan>
+            {businessObj.map((business) => (
+              <Business business={business} />
+            ))}
+          </BusinessPlan>
+        </BodyLeft>
+        <BodyRight>
+          <Programming>
+            <Title>
+              <h1>Projects</h1>
+            </Title>
+            <Description>
+              <DetailInfo>
+                {projectObj.map((project) => (
+                  <Project project={project} />
+                ))}
+              </DetailInfo>
+            </Description>
+          </Programming>
+        </BodyRight>
       </BodySection>
     </Container>
   );
@@ -109,26 +113,37 @@ const Container = styled.div`
 const TopSection = styled.div``;
 const BodySection = styled.div`
   display: flex;
+  flex-direction: row;
+  padding: 40px 20px;
+  margin-top: 20px;
+`;
+const BodyLeft = styled.div`
+  display: flex;
   flex-direction: column;
-  padding: 0 15px;
+  width: 50%;
 `;
-const GreetingMessage = styled.div`
-  h1 {
-    font-size: 34px;
-    font-weight: 500;
-  }
+const BodyRight = styled(BodyLeft)``;
+
+const BusinessPlan = styled.div`
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 `;
-const BusinessPlan = styled.div``;
-const Programming = styled.div``;
+const Programming = styled.div`
+  margin-top: 15px;
+`;
 const Title = styled.div`
   font-size: 40px;
   font-weight: 500;
+  text-align: center;
 `;
 const Description = styled.div`
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  height: 100%;
+  margin-top: 15px;
 `;
 const DetailInfo = styled.div`
   display: flex;

@@ -29,7 +29,7 @@ const Container = styled.div`
   flex-direction: row;
   width: 800px;
   height: 250px;
-  margin-bottom: 15px;
+  margin: 10px;
 `;
 const Left = styled.div`
   margin-right: 10px;
@@ -59,7 +59,18 @@ const TechInfo = styled.div`
   margin-top: 50px;
 `;
 const TechIcon = styled.span``;
-const LinkInfo = styled.div``;
-const Url = styled.span``;
+const LinkInfo = styled.div`
+  margin-top: 40px;
+  a {
+    font-size: 35px;
+    transition: 0.2s;
+  }
+  a:hover {
+    opacity: 0.5;
+  }
+  a:visited {
+    color: black;
+  }
+`;
 
 export default Project;

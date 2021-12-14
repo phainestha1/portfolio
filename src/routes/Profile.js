@@ -120,7 +120,7 @@ const Profile = () => {
               </InfoBox>
               <InfoBox>
                 <h1>Technical Languages</h1>
-                <InformationDetail>
+                <TechInfoDetail>
                   <h3>
                     <strong>Javascript</strong>
                   </h3>
@@ -133,7 +133,7 @@ const Profile = () => {
                   <h3>
                     <strong>GO</strong>
                   </h3>
-                </InformationDetail>
+                </TechInfoDetail>
               </InfoBox>
               <InfoBox>
                 <h1>Strong Communication</h1>
@@ -223,6 +223,7 @@ const Container = styled.div`
   flex-direction: column;
   width: 100vw;
   height: 100vh;
+  background-color: #f5f5f7;
 `;
 const TopSection = styled.div``;
 const BodySection = styled.div`
@@ -249,6 +250,7 @@ const Greeting = styled.div`
   h2 {
     font-size: 48px;
     font-weight: 500;
+    margin-top: 15px;
   }
 `;
 const SNSLink = styled.div`
@@ -284,8 +286,8 @@ const About = styled.div`
   h2 {
     font-size: 18px;
     font-weight: 400;
-    margin-top: 12px;
-    margin-bottom: 40px;
+    margin-top: 25px;
+    margin-bottom: 25px;
   }
   h3 {
     font-size: 18px;
@@ -402,6 +404,18 @@ const InformationDetail = styled.div`
   display: flex;
   flex-direction: column;
   padding-left: 15px;
+  h3 {
+    margin-bottom: 15px;
+  }
+  strong {
+    font-weight: 600;
+  }
+`;
+const TechInfoDetail = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 30px;
   h3 {
     margin-bottom: 15px;
   }

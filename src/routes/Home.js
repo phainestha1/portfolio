@@ -18,7 +18,9 @@ const Home = () => {
           <Link to="/ideas">
             <Btn>Ideas</Btn>
           </Link>
-          <Btn>Why Me?</Btn>
+          <Link to="/mbti">
+            <Btn>mb T i</Btn>
+          </Link>
         </BtnContainer>
         <Phrase>Touch Your Instinct</Phrase>
       </Center>
@@ -36,7 +38,6 @@ const Container = styled.div`
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-color: #fafafa;
 `;
 const Left = styled.div`
   flex: 1;
