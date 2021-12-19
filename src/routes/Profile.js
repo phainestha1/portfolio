@@ -59,7 +59,7 @@ const Profile = () => {
           <About>
             <AboutLink>
               <BtnBox>
-                <StyledLink to="/portfolio/ideas">
+                <StyledLink to="/ideas">
                   <BsLightbulb />
                   <span> Popped in My Head </span>
                 </StyledLink>
