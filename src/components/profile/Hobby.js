@@ -92,19 +92,6 @@ const InformationDetail = styled.div`
     font-weight: 600;
   }
 `;
-const TechInfoDetail = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 0 30px;
-  h3 {
-    margin-bottom: 15px;
-  }
-  strong {
-    font-weight: 600;
-  }
-`;
-
 const Image = styled.img`
   width: 120px;
   height: 150px;

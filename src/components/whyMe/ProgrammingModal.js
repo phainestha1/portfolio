@@ -148,13 +148,7 @@ const Description = styled.div`
 const Left = styled.div`
   padding-right: 10px;
 `;
-const Right = styled.div`
-  text-align: center;
-`;
-const Image = styled.img`
-  width: 200px;
-  height: 250px;
-`;
+
 const FooterSection = styled.div`
   text-align: center;
   margin-top: 30px;

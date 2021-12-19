@@ -22,17 +22,9 @@ const Profile = () => {
     setModal(true);
     setCommunication(true);
   };
-  const closeCommunicationBox = () => {
-    setModal(false);
-    setCommunication(false);
-  };
   const handleLoveBox = () => {
     setModal(true);
     setLove(true);
-  };
-  const closeLoveBox = () => {
-    setModal(false);
-    setLove(false);
   };
   const closeModal = () => {
     setModal(false);
