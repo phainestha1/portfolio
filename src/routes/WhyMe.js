@@ -5,20 +5,20 @@ import PoliticsModal from "../components/whyMe/PoliticsModal";
 import TeamworkModal from "../components/whyMe/TeamworkModal";
 import CommunicationModal from "../components/whyMe/CommunicationModal";
 import ProjectModal from "../components/whyMe/ProjectModal";
-import LeadershipModal from "../components/whyMe/LeadershipModal";
+import ProgrammingModal from "../components/whyMe/ProgrammingModal";
 
 const WhyMe = () => {
   const [politics, setPolitics] = useState(false);
   const [teamwork, setTeamwork] = useState(false);
   const [communication, setCommunication] = useState(false);
   const [project, setProject] = useState(false);
-  const [leadership, setLeadership] = useState(false);
+  const [programming, setProgramming] = useState(false);
   const [modal, setModal] = useState(false);
   const [modalPolitics, setModalPolitics] = useState(false);
   const [modalTeamwork, setModalTeamwork] = useState(false);
   const [modalCommunication, setModalCommunication] = useState(false);
   const [modalProject, setModalProject] = useState(false);
-  const [modalLeadership, setModalLeadership] = useState(false);
+  const [modalProgramming, setModalProgramming] = useState(false);
 
   const handlePolitics = () => {
     setPolitics(true);
@@ -44,11 +44,11 @@ const WhyMe = () => {
   const closeProject = () => {
     setProject(false);
   };
-  const handleLeadership = () => {
-    setLeadership(true);
+  const handleProgramming = () => {
+    setProgramming(true);
   };
-  const closeLeadership = () => {
-    setLeadership(false);
+  const closeProgramming = () => {
+    setProgramming(false);
   };
 
   const closeModal = () => {
@@ -57,7 +57,7 @@ const WhyMe = () => {
     setModalTeamwork(false);
     setModalCommunication(false);
     setModalProject(false);
-    setModalLeadership(false);
+    setModalProgramming(false);
   };
   const handleModalPolitics = () => {
     setModal(true);
@@ -75,9 +75,9 @@ const WhyMe = () => {
     setModal(true);
     setModalProject(true);
   };
-  const handleModalLeadership = () => {
+  const handleModalProgramming = () => {
     setModal(true);
-    setModalLeadership(true);
+    setModalProgramming(true);
   };
 
   return (
@@ -112,18 +112,18 @@ const WhyMe = () => {
             onMouseEnter={handleProject}
             onMouseLeave={closeProject}
           />
-          <Leadership
-            onClick={handleModalLeadership}
-            onMouseEnter={handleLeadership}
-            onMouseLeave={closeLeadership}
+          <Programming
+            onClick={handleModalProgramming}
+            onMouseEnter={handleProgramming}
+            onMouseLeave={closeProgramming}
           />
         </TBox>
         <Message>
-          {teamwork && <h1>Teamwork</h1>}
+          {teamwork && <h1>Design</h1>}
           {politics && <h1>Politics</h1>}
           {communication && <h1>Communication</h1>}
           {project && <h1>Project Management</h1>}
-          {leadership && <h1>Leadership</h1>}
+          {programming && <h1>Programming</h1>}
         </Message>
       </BodySection>
       {modal && (
@@ -133,7 +133,7 @@ const WhyMe = () => {
             {modalTeamwork && <TeamworkModal />}
             {modalCommunication && <CommunicationModal />}
             {modalProject && <ProjectModal />}
-            {modalLeadership && <LeadershipModal />}
+            {modalProgramming && <ProgrammingModal />}
           </ModalBackground>
         </ModalSection>
       )}
@@ -177,12 +177,12 @@ const TBox = styled.div`
 `;
 const Politics = styled.div`
   width: 65px;
-  cursor: pointer;
-  transition: 0.4s;
   height: 230px;
   background-color: #c8102e;
+  cursor: pointer;
+  transition: 0.3s;
   :hover {
-    filter: brightness(70%);
+    transform: scale(1.1);
   }
 `;
 const ProjectManagerment = styled(Politics)`
@@ -190,15 +190,15 @@ const ProjectManagerment = styled(Politics)`
   background-color: #00b2a9;
 `;
 const Communication = styled(Politics)`
-  height: 100px;
+  height: 120px;
   background-color: #ffc759;
 `;
 const Teamwork = styled(Politics)`
-  height: 120px;
+  height: 100px;
   background-color: #babfd1;
 `;
-const Leadership = styled(Politics)`
-  height: 100px;
+const Programming = styled(Politics)`
+  height: 140px;
   background-color: cornflowerblue;
 `;
 const ModalSection = styled.div`

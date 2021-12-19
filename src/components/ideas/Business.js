@@ -18,6 +18,11 @@ const Container = styled.div`
   padding: 15px 20px;
   box-shadow: 3px 4px 5px 4px #aaa;
   margin: 10px;
+  background-color: #f5f5f7;
+  transition: 0.2s;
+  :hover {
+    transform: scale(1.1);
+  }
 `;
 const Title = styled.div`
   font-size: 24px;

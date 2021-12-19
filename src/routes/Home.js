@@ -19,7 +19,9 @@ const Home = () => {
             <Btn>Ideas</Btn>
           </Link>
           <Link to="/mbti">
-            <Btn>mb T i</Btn>
+            <Btn>
+              MB<span>T</span>I
+            </Btn>
           </Link>
         </BtnContainer>
         <Phrase>Touch Your Instinct</Phrase>
@@ -96,6 +98,10 @@ const Btn = styled.button`
   transition: 0.2s;
   :hover {
     opacity: 0.5;
+  }
+  span {
+    color: red;
+    font-weight: 500;
   }
 `;
 
