@@ -12,17 +12,23 @@ const Home = () => {
       <Center>
         <ImageOne src={profileCloud} alt="profileCloud" />
         <BtnContainer>
-          <Link to="/profile">
-            <Btn>Profile</Btn>
-          </Link>
-          <Link to="/ideas">
-            <Btn>Ideas</Btn>
-          </Link>
-          <Link to="/mbti">
-            <Btn>
-              MB<span>T</span>I
-            </Btn>
-          </Link>
+          <BtnBox>
+            <Link to="/profile">
+              <Btn>Profile</Btn>
+            </Link>
+          </BtnBox>
+          <BtnBox>
+            <Link to="/ideas">
+              <Btn>Ideas</Btn>
+            </Link>
+          </BtnBox>
+          <BtnBox>
+            <Link to="/mbti">
+              <Btn>
+                MB<span>T</span>I
+              </Btn>
+            </Link>
+          </BtnBox>
         </BtnContainer>
         <Phrase>Touch Your Instinct</Phrase>
       </Center>
@@ -87,7 +93,11 @@ const Phrase = styled.h1`
   font-weight: 600;
   margin-top: 15px;
 `;
-const BtnContainer = styled.div``;
+const BtnContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+const BtnBox = styled.div``;
 const Btn = styled.button`
   margin: 10px 15px;
   background-color: transparent;
