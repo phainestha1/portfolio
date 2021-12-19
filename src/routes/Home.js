@@ -13,17 +13,17 @@ const Home = () => {
         <ImageOne src={profileCloud} alt="profileCloud" />
         <BtnContainer>
           <BtnBox>
-            <Link to="/portfolio/profile">
+            <Link to="/profile">
               <Btn>Profile</Btn>
             </Link>
           </BtnBox>
           <BtnBox>
-            <Link to="/portfolio/ideas">
+            <Link to="/ideas">
               <Btn>Ideas</Btn>
             </Link>
           </BtnBox>
           <BtnBox>
-            <Link to="/portfolio/mbti">
+            <Link to="/mbti">
               <Btn>
                 MB<span>T</span>I
               </Btn>
