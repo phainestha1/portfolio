@@ -9,10 +9,10 @@ const AppRouter = () => {
   return (
     <Router>
       <Routes>
-        <Route expact path="/" element={<Home />} />
-        <Route expact path="/profile" element={<Profile />} />
-        <Route expact path="/ideas" element={<Ideas />} />
-        <Route expact path="/mbti" element={<WhyMe />} />
+        <Route expact path="/portfolio/" element={<Home />} />
+        <Route expact path="/portfolio/profile" element={<Profile />} />
+        <Route expact path="/portfolio/ideas" element={<Ideas />} />
+        <Route expact path="/portfolio/mbti" element={<WhyMe />} />
       </Routes>
     </Router>
   );

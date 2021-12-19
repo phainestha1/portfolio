@@ -20,7 +20,7 @@ const CommunicationModal = () => {
                 How many languages do you use? You can check my case via this
                 link.
               </h1>
-              <Link to="/profile">
+              <Link to="/portfolio/profile">
                 <h1>Click Me!</h1>
               </Link>
               <h1>

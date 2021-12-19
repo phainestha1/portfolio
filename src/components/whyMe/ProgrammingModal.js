@@ -64,7 +64,7 @@ const ProgrammingModal = () => {
           <Description>
             <h1>You can check my cute projects via this link 🤩</h1>
           </Description>
-          <Link to="/ideas">Click Me!</Link>
+          <Link to="/portfolio/ideas">Click Me!</Link>
         </ChapterBody>
         <ChapterBody>
           <ChapterTitle>
