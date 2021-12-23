@@ -5,16 +5,8 @@ import { motion } from "framer-motion";
 import youTubeSignIn from "../assets/youTubeSignIn.png";
 import slack from "../assets/slack.png";
 import noImage from "../assets/noImage.jpeg";
-import gallery from "../assets/gallery.png";
 import Project from "../components/ideas/Project";
 import Business from "../components/ideas/Business";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/swiper-bundle.min.css";
-import "swiper/swiper.min.css";
-import "../styles/ideas.css";
-import SwiperCore, { EffectCoverflow, Pagination } from "swiper";
-
-SwiperCore.use([EffectCoverflow, Pagination]);
 
 const conVars = {
   start: { opacity: 0, y: 15 },
@@ -38,13 +30,6 @@ const Ideas = () => {
       description: "Realtime Chatting System with React and Firebase",
       tech: "React, Firebase",
       link: "https://github.com/phainestha1/nwitter",
-    },
-    {
-      img: gallery,
-      name: "Gallery Daydream",
-      description: "My little gallery built with React",
-      tech: "React",
-      link: "https://phainestha1.github.io/gallery",
     },
     {
       img: noImage,
@@ -100,63 +85,29 @@ const Ideas = () => {
       </TopSection>
       <BodySection>
         <BodyLeft>
-          <Section>
-            <Title>
-              <h1>Business Insights</h1>
-            </Title>
-            <Description>
-              <Swiper
-                effect={"coverflow"}
-                grabCursor={true}
-                centeredSlides={true}
-                slidesPerView={"auto"}
-                coverflowEffect={{
-                  rotate: 50,
-                  stretch: 0,
-                  depth: 100,
-                  modifier: 1,
-                  slideShadows: false,
-                }}
-                pagination={true}
-                className="mySwiper"
-              >
-                {businessObj.map((business) => (
-                  <SwiperSlide>
-                    <Business business={business} />
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            </Description>
-          </Section>
-          <Section>
+          <Title>
+            <h1>Business Insights</h1>
+          </Title>
+          <BusinessPlan>
+            {businessObj.map((business) => (
+              <Business business={business} />
+            ))}
+          </BusinessPlan>
+        </BodyLeft>
+        <BodyRight>
+          <Programming>
             <Title>
               <h1>Projects</h1>
             </Title>
             <Description>
-              <Swiper
-                effect={"coverflow"}
-                grabCursor={true}
-                centeredSlides={true}
-                slidesPerView={"auto"}
-                coverflowEffect={{
-                  rotate: 50,
-                  stretch: 0,
-                  depth: 100,
-                  modifier: 1,
-                  slideShadows: false,
-                }}
-                pagination={true}
-                className="mySwiper"
-              >
+              <DetailInfo>
                 {projectObj.map((project) => (
-                  <SwiperSlide>
-                    <Project project={project} />
-                  </SwiperSlide>
+                  <Project project={project} />
                 ))}
-              </Swiper>
+              </DetailInfo>
             </Description>
-          </Section>
-        </BodyLeft>
+          </Programming>
+        </BodyRight>
       </BodySection>
     </Container>
   );
@@ -165,39 +116,47 @@ const Ideas = () => {
 const Container = styled(motion.div)`
   display: flex;
   flex-direction: column;
-  height: 100vh;
 `;
 const TopSection = styled.div``;
 const BodySection = styled.div`
   display: flex;
   flex-direction: row;
-  padding-top: 20px;
-  height: 100%;
+  margin-top: 20px;
 `;
 const BodyLeft = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
+  width: 50%;
 `;
-const Description = styled.div`
-  margin: 5px 0 20px 0;
+const BodyRight = styled(BodyLeft)``;
+
+const BusinessPlan = styled.div`
+  margin-top: 15px;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 `;
-const Section = styled.div`
+const Programming = styled.div`
+  margin-top: 15px;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  margin-top: 15px;
 `;
 const Title = styled.div`
   font-size: 40px;
-  font-weight: 300;
+  font-weight: 500;
   text-align: center;
+`;
+const Description = styled.div`
+  width: 100%;
+  margin-top: 15px;
+`;
+const DetailInfo = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 `;
 
 export default Ideas;

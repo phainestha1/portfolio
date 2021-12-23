@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import TopNav from "../components/TopNav";
 import {
   AiOutlineInstagram,
@@ -18,6 +18,12 @@ const conVars = {
   start: { opacity: 0, y: 15 },
   end: { opacity: 1, y: 0, transition: { duration: 1 } },
   leaving: { opacity: 0, y: -15, transition: { duration: 0.5 } },
+};
+
+const modalVars = {
+  start: { opacity: 0 },
+  end: { opacity: 1, transition: { duration: 0.5 } },
+  leaving: { opacity: 0, transition: { duration: 0.5 } },
 };
 
 const Profile = () => {
@@ -95,14 +101,21 @@ const Profile = () => {
           </About>
         </Right>
       </BodySection>
-      {modal && (
-        <ModalSection>
-          <ModalBackground onClick={closeModal}>
-            {communication && <Communicate />}
-            {love && <Hobby />}
-          </ModalBackground>
-        </ModalSection>
-      )}
+      <AnimatePresence>
+        {modal ? (
+          <ModalSection
+            variants={modalVars}
+            initial="start"
+            animate="end"
+            exit="leaving"
+          >
+            <ModalBackground onClick={closeModal}>
+              {communication && <Communicate />}
+              {love && <Hobby />}
+            </ModalBackground>
+          </ModalSection>
+        ) : null}
+      </AnimatePresence>
     </Container>
   );
 };
@@ -112,7 +125,6 @@ const Container = styled(motion.div)`
   flex-direction: column;
   width: 100vw;
   height: 100vh;
-  background-color: #f5f5f7;
 `;
 const TopSection = styled.div``;
 const BodySection = styled.div`
@@ -228,7 +240,7 @@ const StyledLink = styled(Link)`
     color: black;
   }
 `;
-const ModalSection = styled.div`
+const ModalSection = styled(motion.div)`
   position: absolute;
 `;
 const ModalBackground = styled.div`

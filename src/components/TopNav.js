@@ -1,18 +1,33 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { IoMdHome } from "react-icons/io";
 
 const TopNav = () => {
   return (
     <TopSection>
-      <TopLeft>
-        <Link to="/">
-          <HomeBtn>
-            <IoMdHome />
-          </HomeBtn>
-        </Link>
-      </TopLeft>
+      <Link to="/">
+        <Btn>
+          <h1>Home</h1>
+        </Btn>
+      </Link>
+
+      <Link to="/profile">
+        <Btn>
+          <h1>Profile</h1>
+        </Btn>
+      </Link>
+
+      <Link to="/ideas">
+        <Btn>
+          <h1>Ideas</h1>
+        </Btn>
+      </Link>
+
+      <Link to="/mbti">
+        <Btn>
+          <h1>MBTI</h1>
+        </Btn>
+      </Link>
     </TopSection>
   );
 };
@@ -20,15 +35,16 @@ const TopNav = () => {
 const TopSection = styled.div`
   display: flex;
   flex-direction: row;
-  padding: 5px 8px;
+  padding: 10px 8px;
+  justify-content: center;
 `;
-const TopLeft = styled.div``;
-const HomeBtn = styled.button`
+const Btn = styled.button`
   color: #333333;
   background-color: transparent;
   border: none;
+  font-size: 1rem;
+  margin-right: 15px;
   cursor: pointer;
-  font-size: 24px;
   transition: 0.2s;
   :hover {
     opacity: 0.5;

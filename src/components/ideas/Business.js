@@ -5,16 +5,19 @@ const Business = (business) => {
   return (
     <Container>
       <Title>{business.business.title}</Title>
-      <Summary>{business.business.summary}</Summary>
+      <Summary>
+        {business.business.summary.length >= 100
+          ? business.business.summary.slice(0, 100) + "..."
+          : business.business.summary}
+      </Summary>
       <Tech>{business.business.tech}</Tech>
     </Container>
   );
 };
 
 const Container = styled.div`
-  margin-bottom: 15px;
-  width: 400px;
-  height: 150px;
+  width: 250px;
+  height: 180px;
   border-radius: 8px;
   padding: 15px 20px;
   box-shadow: 3px 4px 5px 4px #aaa;

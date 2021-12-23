@@ -8,6 +8,30 @@ import back from "../../assets/back.jpg";
 function Hobby() {
   return (
     <Container>
+      <HeaderSection>
+        <HeaderTitleMessage>
+          <span>😙</span>
+          <HeaderTitle>
+            <h2>Profile</h2>
+            <h1>THINGS I LOVE</h1>
+          </HeaderTitle>
+        </HeaderTitleMessage>
+
+        {/* Wave */}
+        <div class="custom-shape-divider-bottom-1640255528">
+          <svg
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+              class="shape-fill"
+            ></path>
+          </svg>
+        </div>
+      </HeaderSection>
       <InfoBox>
         <h1>See my photos :) !!</h1>
         <ImageDetail>
@@ -49,6 +73,9 @@ function Hobby() {
           />
         </ImageDetail>
       </InfoBox>
+      <FooterSection>
+        <h1>Click Anywhere to Close This Box...</h1>
+      </FooterSection>
     </Container>
   );
 }
@@ -58,19 +85,45 @@ const Container = styled.div`
   flex-direction: column;
   width: 50%;
   height: 50%;
-  padding: 30px;
   background-color: #f5f5f7;
   overflow: scroll;
-  overflow-x: hidden;
+  border-radius: 8px;
+  h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #7734cd;
+  }
 `;
-
+const HeaderSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  background-color: #b486f0;
+  margin-bottom: 30px;
+  span {
+    font-size: 50px;
+  }
+`;
+const HeaderTitleMessage = styled.div`
+  display: flex;
+  flex-direction: row;
+  padding: 20px 20px 0 20px;
+`;
+const HeaderTitle = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 15px;
+  line-height: 1.1;
+  h2 {
+    color: #fff;
+  }
+`;
 const InfoBox = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 15px;
+  padding: 0 15px;
+  margin: 15px 0;
   h1 {
-    font-size: 24px;
-    border-bottom: 2px solid black;
     margin-bottom: 20px;
   }
 `;
@@ -78,7 +131,7 @@ const InfoBox = styled.div`
 const ImageDetail = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   padding: 0 15px;
 `;
 const InformationDetail = styled.div`
@@ -95,6 +148,16 @@ const InformationDetail = styled.div`
 const Image = styled.img`
   width: 120px;
   height: 150px;
+  margin: 0 1%;
+`;
+const FooterSection = styled.div`
+  text-align: center;
+  margin: 30px 0;
+  font-weight: 600;
+  h1 {
+    color: #aaa;
+    font-size: 1rem;
+  }
 `;
 
 export default Hobby;

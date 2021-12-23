@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import styled from "styled-components";
 import TopNav from "../components/TopNav";
 import PoliticsModal from "../components/mbti/PoliticsModal";
@@ -12,6 +12,11 @@ const conVars = {
   start: { opacity: 0, y: 15 },
   end: { opacity: 1, y: 0, transition: { duration: 1 } },
   leaving: { opacity: 0, y: -15, transition: { duration: 1 } },
+};
+const modalVars = {
+  start: { opacity: 0 },
+  end: { opacity: 1, transition: { duration: 0.5 } },
+  leaving: { opacity: 0, transition: { duration: 0.5 } },
 };
 
 const Mbti = () => {
@@ -133,17 +138,24 @@ const Mbti = () => {
           {programming && <h1>Programming</h1>}
         </Message>
       </BodySection>
-      {modal && (
-        <ModalSection>
-          <ModalBackground onClick={closeModal}>
-            {modalPolitics && <PoliticsModal />}
-            {modalDesign && <DesignModal />}
-            {modalCommunication && <CommunicationModal />}
-            {modalProject && <ProjectModal />}
-            {modalProgramming && <ProgrammingModal />}
-          </ModalBackground>
-        </ModalSection>
-      )}
+      <AnimatePresence>
+        {modal && (
+          <ModalSection
+            variants={modalVars}
+            initial="start"
+            animate="end"
+            exit="leaving"
+          >
+            <ModalBackground onClick={closeModal}>
+              {modalPolitics && <PoliticsModal />}
+              {modalDesign && <DesignModal />}
+              {modalCommunication && <CommunicationModal />}
+              {modalProject && <ProjectModal />}
+              {modalProgramming && <ProgrammingModal />}
+            </ModalBackground>
+          </ModalSection>
+        )}
+      </AnimatePresence>
     </Container>
   );
 };
@@ -190,6 +202,7 @@ const Politics = styled.div`
   transition: 0.3s;
   :hover {
     transform: scale(1.1);
+    margin: 12px;
   }
 `;
 const ProjectManagerment = styled(Politics)`
@@ -208,7 +221,7 @@ const Programming = styled(Politics)`
   height: 140px;
   background-color: cornflowerblue;
 `;
-const ModalSection = styled.div`
+const ModalSection = styled(motion.div)`
   position: absolute;
 `;
 const ModalBackground = styled.div`
