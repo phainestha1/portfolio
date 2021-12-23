@@ -1,21 +1,28 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import styled from "styled-components";
 import TopNav from "../components/TopNav";
-import PoliticsModal from "../components/whyMe/PoliticsModal";
-import TeamworkModal from "../components/whyMe/TeamworkModal";
-import CommunicationModal from "../components/whyMe/CommunicationModal";
-import ProjectModal from "../components/whyMe/ProjectModal";
-import ProgrammingModal from "../components/whyMe/ProgrammingModal";
+import PoliticsModal from "../components/mbti/PoliticsModal";
+import DesignModal from "../components/mbti/DesignModal";
+import CommunicationModal from "../components/mbti/CommunicationModal";
+import ProjectModal from "../components/mbti/ProjectModal";
+import ProgrammingModal from "../components/mbti/ProgrammingModal";
 
-const WhyMe = () => {
+const conVars = {
+  start: { opacity: 0, y: 15 },
+  end: { opacity: 1, y: 0, transition: { duration: 1 } },
+  leaving: { opacity: 0, y: -15, transition: { duration: 1 } },
+};
+
+const Mbti = () => {
   const [politics, setPolitics] = useState(false);
-  const [teamwork, setTeamwork] = useState(false);
+  const [design, setDesign] = useState(false);
   const [communication, setCommunication] = useState(false);
   const [project, setProject] = useState(false);
   const [programming, setProgramming] = useState(false);
   const [modal, setModal] = useState(false);
   const [modalPolitics, setModalPolitics] = useState(false);
-  const [modalTeamwork, setModalTeamwork] = useState(false);
+  const [modalDesign, setModalDesign] = useState(false);
   const [modalCommunication, setModalCommunication] = useState(false);
   const [modalProject, setModalProject] = useState(false);
   const [modalProgramming, setModalProgramming] = useState(false);
@@ -26,11 +33,11 @@ const WhyMe = () => {
   const closePolitics = () => {
     setPolitics(false);
   };
-  const handleTeamwork = () => {
-    setTeamwork(true);
+  const handleDesign = () => {
+    setDesign(true);
   };
-  const closeTeamwork = () => {
-    setTeamwork(false);
+  const closeDesign = () => {
+    setDesign(false);
   };
   const handleCommunication = () => {
     setCommunication(true);
@@ -54,7 +61,7 @@ const WhyMe = () => {
   const closeModal = () => {
     setModal(false);
     setModalPolitics(false);
-    setModalTeamwork(false);
+    setModalDesign(false);
     setModalCommunication(false);
     setModalProject(false);
     setModalProgramming(false);
@@ -63,9 +70,9 @@ const WhyMe = () => {
     setModal(true);
     setModalPolitics(true);
   };
-  const handleModalTeamwork = () => {
+  const handleModalDesign = () => {
     setModal(true);
-    setModalTeamwork(true);
+    setModalDesign(true);
   };
   const handleModalCommunication = () => {
     setModal(true);
@@ -81,7 +88,7 @@ const WhyMe = () => {
   };
 
   return (
-    <Container>
+    <Container variants={conVars} initial="start" animate="end" exit="leaving">
       <TopSection>
         <TopNav />
       </TopSection>
@@ -93,9 +100,9 @@ const WhyMe = () => {
         </Message>
         <TBox>
           <Teamwork
-            onClick={handleModalTeamwork}
-            onMouseEnter={handleTeamwork}
-            onMouseLeave={closeTeamwork}
+            onClick={handleModalDesign}
+            onMouseEnter={handleDesign}
+            onMouseLeave={closeDesign}
           />
           <Communication
             onClick={handleModalCommunication}
@@ -119,7 +126,7 @@ const WhyMe = () => {
           />
         </TBox>
         <Message>
-          {teamwork && <h1>Design</h1>}
+          {design && <h1>Design</h1>}
           {politics && <h1>Politics</h1>}
           {communication && <h1>Communication</h1>}
           {project && <h1>Project Management</h1>}
@@ -130,7 +137,7 @@ const WhyMe = () => {
         <ModalSection>
           <ModalBackground onClick={closeModal}>
             {modalPolitics && <PoliticsModal />}
-            {modalTeamwork && <TeamworkModal />}
+            {modalDesign && <DesignModal />}
             {modalCommunication && <CommunicationModal />}
             {modalProject && <ProjectModal />}
             {modalProgramming && <ProgrammingModal />}
@@ -141,7 +148,7 @@ const WhyMe = () => {
   );
 };
 
-const Container = styled.div`
+const Container = styled(motion.div)`
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -213,4 +220,4 @@ const ModalBackground = styled.div`
   background-color: rgba(0, 0, 0, 0.3);
 `;
 
-export default WhyMe;
+export default Mbti;

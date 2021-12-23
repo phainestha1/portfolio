@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import steve from "../../assets/img/steve.jpeg";
+import steve from "../../assets/steve.jpeg";
 
-const TeamworkModal = () => {
+const DesignModal = () => {
   return (
     <Container>
       <Title>
@@ -16,7 +16,14 @@ const TeamworkModal = () => {
               <h1>Can You Design?</h1>
             </ChapterTitle>
             <Description>
-              <h1>Yes! I hope you like my website design :)</h1>
+              <h1>
+                If you mean drwaing or making something, I should say no. But I
+                capture moments of beauty with my camera. Please check my little
+                gallery!
+              </h1>
+              <a href="https://phainestha1.github.io/gallery">
+                <h1>Click Me!</h1>
+              </a>
             </Description>
           </Left>
         </Summary>
@@ -154,4 +161,4 @@ const FooterSection = styled.div`
   margin-top: 30px;
   font-weight: 600;
 `;
-export default TeamworkModal;
+export default DesignModal;

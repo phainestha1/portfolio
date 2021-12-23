@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import TopNav from "../components/TopNav";
 import {
   AiOutlineInstagram,
@@ -12,6 +13,12 @@ import {
 import { BsLightbulb } from "react-icons/bs";
 import Communicate from "../components/profile/Communicate";
 import Hobby from "../components/profile/Hobby";
+
+const conVars = {
+  start: { opacity: 0, y: 15 },
+  end: { opacity: 1, y: 0, transition: { duration: 1 } },
+  leaving: { opacity: 0, y: -15, transition: { duration: 0.5 } },
+};
 
 const Profile = () => {
   const [modal, setModal] = useState(false);
@@ -33,7 +40,7 @@ const Profile = () => {
   };
 
   return (
-    <Container>
+    <Container variants={conVars} initial="start" animate="end" exit="leaving">
       <TopSection>
         <TopNav />
       </TopSection>
@@ -100,7 +107,7 @@ const Profile = () => {
   );
 };
 
-const Container = styled.div`
+const Container = styled(motion.div)`
   display: flex;
   flex-direction: column;
   width: 100vw;

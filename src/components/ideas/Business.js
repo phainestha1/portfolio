@@ -14,6 +14,7 @@ const Business = (business) => {
 const Container = styled.div`
   margin-bottom: 15px;
   width: 400px;
+  height: 150px;
   border-radius: 8px;
   padding: 15px 20px;
   box-shadow: 3px 4px 5px 4px #aaa;

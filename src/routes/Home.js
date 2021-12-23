@@ -1,11 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import styled from "styled-components";
-import profileCloud from "../assets/img/ProfileCloud.jpg";
+import profileCloud from "../assets/ProfileCloud.jpg";
+
+const conVars = {
+  start: { opacity: 0, y: 15 },
+  end: { opacity: 1, y: 0, transition: { duration: 1 } },
+  leaving: { opacity: 0, y: -15, transition: { duration: 0.5 } },
+};
+
+const phraseVars = {
+  start: { opacity: 0, y: 15 },
+  end: { opacity: 1, y: 0, transition: { delay: 0.5, duration: 1 } },
+};
 
 const Home = () => {
   return (
-    <Container>
+    <Container variants={conVars} initial="start" animate="end" exit="leaving">
       <Left>
         <MyName>Hyeon Sang</MyName>
       </Left>
@@ -30,7 +42,9 @@ const Home = () => {
             </Link>
           </BtnBox>
         </BtnContainer>
-        <Phrase>Touch Your Instinct</Phrase>
+        <Phrase variants={phraseVars} initial="start" animate="end">
+          Touch Your Instinct
+        </Phrase>
       </Center>
       <Right>
         <Title>Future Creator</Title>
@@ -39,7 +53,7 @@ const Home = () => {
   );
 };
 
-const Container = styled.div`
+const Container = styled(motion.div)`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -61,7 +75,7 @@ const MyName = styled.span`
   transform: rotate(-90deg);
   transform-origin: top left;
 `;
-const ImageOne = styled.img`
+const ImageOne = styled(motion.img)`
   margin-bottom: 20px;
   border-radius: 999px;
   width: 150px;
@@ -88,7 +102,7 @@ const Title = styled.span`
   transform: rotate(90deg);
   transform-origin: bottom right;
 `;
-const Phrase = styled.h1`
+const Phrase = styled(motion.h1)`
   font-size: 32px;
   font-weight: 600;
   margin-top: 15px;

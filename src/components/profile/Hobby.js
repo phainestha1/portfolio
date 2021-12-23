@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import cafeView from "../../assets/img/cafeView.jpg";
-import soloRunning from "../../assets/img/soloRunning.jpg";
-import autumnFamily from "../../assets/img/autumnFamily.jpg";
-import back from "../../assets/img/back.jpg";
+import cafeView from "../../assets/cafeView.jpg";
+import soloRunning from "../../assets/soloRunning.jpg";
+import autumnFamily from "../../assets/autumnFamily.jpg";
+import back from "../../assets/back.jpg";
 
 function Hobby() {
   return (

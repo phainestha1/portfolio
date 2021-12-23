@@ -1,11 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 import TopNav from "../components/TopNav";
-import youTubeSignIn from "../assets/img/youTubeSignIn.png";
-import slack from "../assets/img/slack.png";
-import noImage from "../assets/img/noImage.jpeg";
+import { motion } from "framer-motion";
+import youTubeSignIn from "../assets/youTubeSignIn.png";
+import slack from "../assets/slack.png";
+import noImage from "../assets/noImage.jpeg";
 import Project from "../components/ideas/Project";
 import Business from "../components/ideas/Business";
+
+const conVars = {
+  start: { opacity: 0, y: 15 },
+  end: { opacity: 1, y: 0, transition: { duration: 1 } },
+  leaving: { opacity: 0, y: -15, transition: { duration: 0.5 } },
+};
 
 const Ideas = () => {
   const projectObj = [
@@ -72,7 +79,7 @@ const Ideas = () => {
   ];
 
   return (
-    <Container>
+    <Container variants={conVars} initial="start" animate="end" exit="leaving">
       <TopSection>
         <TopNav />
       </TopSection>
@@ -106,7 +113,7 @@ const Ideas = () => {
   );
 };
 
-const Container = styled.div`
+const Container = styled(motion.div)`
   display: flex;
   flex-direction: column;
 `;
@@ -114,7 +121,6 @@ const TopSection = styled.div``;
 const BodySection = styled.div`
   display: flex;
   flex-direction: row;
-  padding: 40px 20px;
   margin-top: 20px;
 `;
 const BodyLeft = styled.div`
@@ -133,6 +139,8 @@ const BusinessPlan = styled.div`
 `;
 const Programming = styled.div`
   margin-top: 15px;
+  display: flex;
+  flex-direction: column;
 `;
 const Title = styled.div`
   font-size: 40px;
@@ -140,17 +148,15 @@ const Title = styled.div`
   text-align: center;
 `;
 const Description = styled.div`
-  display: flex;
-  flex-wrap: wrap;
   width: 100%;
   margin-top: 15px;
 `;
 const DetailInfo = styled.div`
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  border-radius: 8px;
 `;
 
 export default Ideas;

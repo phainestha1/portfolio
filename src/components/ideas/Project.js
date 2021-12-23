@@ -27,9 +27,17 @@ const Project = (project) => {
 const Container = styled.div`
   display: flex;
   flex-direction: row;
-  width: 800px;
-  height: 250px;
-  margin: 10px;
+  width: 90%;
+  max-width: 800px;
+  height: auto;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 3px 4px 5px 4px #aaa;
+  transition: 0.2s;
+  :hover {
+    transform: scale(1.05);
+  }
 `;
 const Left = styled.div`
   margin-right: 10px;
@@ -37,7 +45,6 @@ const Left = styled.div`
 const ProjectImage = styled.img`
   width: 350px;
   height: 250px;
-  border-radius: 8px;
 `;
 const Right = styled.div`
   display: flex;

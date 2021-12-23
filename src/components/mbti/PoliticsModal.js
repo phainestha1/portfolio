@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import PoliticsMemory from "../../assets/img/PoliticsMemory.jpg";
+import PoliticsMemory from "../../assets/PoliticsMemory.jpg";
 
 const PoliticsModal = () => {
   return (
