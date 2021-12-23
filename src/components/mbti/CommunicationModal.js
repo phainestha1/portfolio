@@ -6,7 +6,20 @@ const CommunicationModal = () => {
   return (
     <Container>
       <Title>
-        <h1>Communication: Me First</h1>
+        <h1>🗣 Communication: Me First</h1>
+        <div class="custom-shape-divider-bottom-1640263394">
+          <svg
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M1200 120L0 16.48 0 0 1200 0 1200 120z"
+              class="shape-fill"
+            ></path>
+          </svg>
+        </div>
       </Title>
       <BodySection>
         <Summary>
@@ -102,18 +115,22 @@ const Container = styled.div`
   flex-direction: column;
   width: 50%;
   height: 50%;
-  padding: 30px;
   background-color: #f5f5f7;
-  overflow: scroll;
+  overflow-y: scroll;
   overflow-x: hidden;
+  border-radius: 8px;
 `;
 
 const Title = styled.div`
-  border-bottom: 1px solid black;
-  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: #f3d493;
   h1 {
-    font-size: 24px;
+    font-size: 32px;
     font-weight: 600;
+    color: aliceblue;
+    padding: 30px 0 0 30px;
+    margin-bottom: -30px;
   }
 `;
 const Colorbar = styled.div`
@@ -125,6 +142,7 @@ const Colorbar = styled.div`
 const BodySection = styled.div`
   display: flex;
   flex-direction: column;
+  padding: 0 15px;
 `;
 const ChapterBody = styled.div`
   display: flex;
@@ -178,8 +196,12 @@ const Image = styled.img`
 `;
 const FooterSection = styled.div`
   text-align: center;
-  margin-top: 30px;
+  margin: 30px 0;
   font-weight: 600;
+  h1 {
+    color: #aaa;
+    font-size: 1rem;
+  }
 `;
 
 export default CommunicationModal;

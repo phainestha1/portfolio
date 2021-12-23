@@ -20,12 +20,12 @@ const Container = styled.div`
   height: 180px;
   border-radius: 8px;
   padding: 15px 20px;
-  box-shadow: 3px 4px 5px 4px #aaa;
   margin: 10px;
-  background-color: #f5f5f7;
-  transition: 0.2s;
+  background-color: #fff;
+  transition: 0.4s;
   :hover {
     transform: scale(1.1);
+    box-shadow: 2px 3px 5px 1px #aaa;
   }
 `;
 const Title = styled.div`

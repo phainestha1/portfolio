@@ -24,10 +24,11 @@ const Container = styled.div`
   width: 250px;
   height: 200px;
   border-radius: 8px;
-  box-shadow: 3px 4px 5px 4px #aaa;
-  transition: 0.2s;
+  transition: 0.4s;
+  background-color: #fff;
   :hover {
     transform: scale(1.1);
+    box-shadow: 2px 3px 5px 1px #aaa;
   }
 `;
 const Top = styled.div`

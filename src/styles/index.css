@@ -124,6 +124,7 @@ table {
   border-spacing: 0;
 }
 
+/* Profile */
 .custom-shape-divider-bottom-1640255528 {
   width: 100%;
   overflow: hidden;
@@ -140,5 +141,24 @@ table {
 }
 
 .custom-shape-divider-bottom-1640255528 .shape-fill {
+  fill: #f5f5f7;
+}
+
+/* MBTI */
+.custom-shape-divider-bottom-1640263394 {
+  width: 110%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1640263394 svg {
+  position: relative;
+  display: block;
+  width: calc(300% + 1.3px);
+  height: 93px;
+}
+
+.custom-shape-divider-bottom-1640263394 .shape-fill {
   fill: #f5f5f7;
 }
