@@ -56,7 +56,7 @@ const MobHome = () => {
         )}
         {isBrowser && (
           <DetectingMessage variants={phraseVars} initial="start" animate="end">
-            Ah, you maybe using a browser..
+            Ah, you maybe using a browser.. Let me have big space?
           </DetectingMessage>
         )}
       </Center>

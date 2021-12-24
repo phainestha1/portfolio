@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import steve from "../../assets/steve.jpeg";
+import steve from "../../../assets/steve.jpeg";
 
-const DesignModal = () => {
+const MobDesignModal = () => {
   return (
     <Container>
       <Title>
@@ -58,6 +58,9 @@ const DesignModal = () => {
                   aesthetic imperfectness. Pursuing mediocre level was
                   catastrophic disaster to him, and he even blamed the attitude.
                   <br />
+                  <Right>
+                    <Image src={steve} alt="Steve Jobs cover page" />
+                  </Right>
                   From this book, I was inspired that design make people
                   envision what idea the product is drawing, and how the item
                   lead them to its expected future. As Jobs wanted the "End to
@@ -71,9 +74,6 @@ const DesignModal = () => {
                   nod.
                 </h1>
               </Left>
-              <Right>
-                <Image src={steve} alt="Steve Jobs cover page" />
-              </Right>
             </Summary>
           </Description>
         </ChapterBody>
@@ -97,8 +97,8 @@ const DesignModal = () => {
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  width: 50%;
-  height: 50%;
+  width: 90%;
+  height: 90%;
   background-color: #f5f5f7;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -110,12 +110,17 @@ const Title = styled.div`
   flex-direction: column;
   background-color: #515151;
   h1 {
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 600;
     color: aliceblue;
     padding: 30px 0 0 30px;
     margin-bottom: -30px;
   }
+`;
+const ChapterBody = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px 25px 10px;
 `;
 const Colorbar = styled.div`
   width: 10px;
@@ -128,11 +133,7 @@ const BodySection = styled.div`
   flex-direction: column;
   padding: 0 15px;
 `;
-const ChapterBody = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 0 10px 25px 10px;
-`;
+
 const ChapterTitle = styled.div`
   display: flex;
   flex-direction: row;
@@ -168,6 +169,8 @@ const Left = styled.div`
 const Right = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
+  margin: 10px 0;
 `;
 const Image = styled.img`
   width: 200px;
@@ -183,4 +186,4 @@ const FooterSection = styled.div`
   }
 `;
 
-export default DesignModal;
+export default MobDesignModal;

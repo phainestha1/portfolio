@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Business = (business) => {
+const MobBusiness = (business) => {
   return (
     <Container>
       <Top>
@@ -18,10 +18,12 @@ const Business = (business) => {
 };
 
 const Container = styled.div`
-  width: 55%;
-  height: 60%;
+  width: 90%;
+  height: 85%;
   border-radius: 8px;
+  margin: 10px;
   background-color: #fff;
+  overflow-y: scroll;
   transition: 0.4s;
   :hover {
     transform: scale(1.1);
@@ -56,4 +58,4 @@ const Bottom = styled.div`
   padding: 0 20px;
 `;
 
-export default Business;
+export default MobBusiness;

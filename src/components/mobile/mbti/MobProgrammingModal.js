@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import steve from "../../assets/steve.jpeg";
+import { Link } from "react-router-dom";
 
-const DesignModal = () => {
+const MobProgrammingModal = () => {
   return (
     <Container>
       <Title>
-        <h1>🎨 Design: How to Control Users</h1>
+        <h1>💻 Programming: Language with Hands</h1>
         <div class="custom-shape-divider-bottom-1640263394">
           <svg
             data-name="Layer 1"
@@ -26,56 +26,58 @@ const DesignModal = () => {
           <Left>
             <ChapterTitle>
               <Colorbar></Colorbar>
-              <h1>Can You Design?</h1>
+              <h1>Why I Started</h1>
             </ChapterTitle>
             <Description>
               <h1>
-                If you mean drwaing or making something, I should say no. But I
-                capture moments of beauty with my camera. Please check my little
-                gallery!
+                Honestly, I want to start my own business but don't have money
+                to hire engineers. So I started programming by myself with
+                Javascript.
+                <br />
+                But it is interesting that one of my best readings, 권도균의
+                스타트업 경영 수업, mentions the same way as mine. Here's the
+                thing. If you or your co-founder have no main technology or
+                knowledge for your business, you should not start a company. So
+                it was the fact that I was starting my programming life because
+                of the money issue, it was also fortunate signal that I am doing
+                right thing!
               </h1>
-              <a href="https://phainestha1.github.io/gallery">
-                <h1>Click Me!</h1>
-              </a>
             </Description>
           </Left>
         </Summary>
         <ChapterBody>
           <ChapterTitle>
             <Colorbar></Colorbar>
-            <h1>Does Design Matter?</h1>
+            <h1>I Can Understand Your Code!</h1>
           </ChapterTitle>
           <Description>
             <h1>
-              I thought design was something like with beauty. It was more
-              related with pragmatic goal. Recently I read a book, and it really
-              helped me to develop my previous opinion. Let's check it out.
+              We use same language but understand different things. In my last
+              job, office and depot had go through same problems. So I always
+              monitored several times whether my requests are going well, or I
+              am understanding messages from depot without any missing points.
+              Including this field, the world with people may 100% same :P..
+              Thus I am a super person toward the importance of communication.
+              <br />
+              On the basis of my selfstudy, I can read and understand codes even
+              it would take some times. Maybe it would be hard to read codes if
+              it was written in languages I don't know such as Haskell, C#, or
+              Solidity. But I know the essential meaning of communication and
+              eager to talk with engineers. I'll never say like "Oh, I don't
+              know this but believe in you." This is not delegation nor somethig
+              like teamwork.
             </h1>
-            <Summary>
-              <Left>
-                <h1>
-                  Steve Jobs was obsessed over design and never allowed
-                  aesthetic imperfectness. Pursuing mediocre level was
-                  catastrophic disaster to him, and he even blamed the attitude.
-                  <br />
-                  From this book, I was inspired that design make people
-                  envision what idea the product is drawing, and how the item
-                  lead them to its expected future. As Jobs wanted the "End to
-                  End" environment, design is not only the first step users are
-                  seeing ite interface, but also the way to control customers to
-                  fulfill its ultimate user experiences.
-                  <br />
-                  Maybe it is controversial that there is the absolute good and
-                  people have to learn the concept. But in the view point of
-                  user marketing, Apple's trendy design is working well, and I
-                  nod.
-                </h1>
-              </Left>
-              <Right>
-                <Image src={steve} alt="Steve Jobs cover page" />
-              </Right>
-            </Summary>
           </Description>
+        </ChapterBody>
+        <ChapterBody>
+          <ChapterTitle>
+            <Colorbar></Colorbar>
+            <h1>I Can Write My Own Codes!</h1>
+          </ChapterTitle>
+          <Description>
+            <h1>You can check my cute projects via this link 🤩</h1>
+          </Description>
+          <Link to="/ideas">Click Me!</Link>
         </ChapterBody>
         <ChapterBody>
           <ChapterTitle>
@@ -83,7 +85,7 @@ const DesignModal = () => {
             <h1>In One Line</h1>
           </ChapterTitle>
           <Description>
-            <h1>Design controls how consumers use and feel my product.</h1>
+            <h1>I read and write "your language"</h1>
           </Description>
         </ChapterBody>
       </BodySection>
@@ -97,20 +99,19 @@ const DesignModal = () => {
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  width: 50%;
-  height: 50%;
+  width: 90%;
+  height: 90%;
   background-color: #f5f5f7;
   overflow-y: scroll;
   overflow-x: hidden;
   border-radius: 8px;
 `;
-
 const Title = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: #515151;
+  background-color: #019bc9;
   h1 {
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 600;
     color: aliceblue;
     padding: 30px 0 0 30px;
@@ -120,7 +121,7 @@ const Title = styled.div`
 const Colorbar = styled.div`
   width: 10px;
   height: 30px;
-  background-color: #babfd1;
+  background-color: cornflowerblue;
   margin-right: 10px;
 `;
 const BodySection = styled.div`
@@ -162,16 +163,7 @@ const Description = styled.div`
   }
 `;
 const Left = styled.div`
-  flex: 1;
   padding-right: 10px;
-`;
-const Right = styled.div`
-  display: flex;
-  align-items: center;
-`;
-const Image = styled.img`
-  width: 200px;
-  height: 250px;
 `;
 const FooterSection = styled.div`
   text-align: center;
@@ -183,4 +175,4 @@ const FooterSection = styled.div`
   }
 `;
 
-export default DesignModal;
+export default MobProgrammingModal;

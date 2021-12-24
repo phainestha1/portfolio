@@ -55,17 +55,17 @@ const Home = () => {
         </Phrase>
         {isChrome && (
           <DetectingMessage variants={phraseVars} initial="start" animate="end">
-            Hello Someone with Chrome
+            Hello Chrome
           </DetectingMessage>
         )}
         {isFirefox && (
           <DetectingMessage variants={phraseVars} initial="start" animate="end">
-            Hello Someone with Firefox
+            Let's burning with Firefox🔥
           </DetectingMessage>
         )}
         {isSafari && (
           <DetectingMessage variants={phraseVars} initial="start" animate="end">
-            Hello Someone with Safari
+            Explore the world in Safari
           </DetectingMessage>
         )}
         {isIE && (
@@ -75,7 +75,12 @@ const Home = () => {
         )}
         {isEdge && (
           <DetectingMessage variants={phraseVars} initial="start" animate="end">
-            Hello Someone with Edge
+            Hello new Microsofter with Edge
+          </DetectingMessage>
+        )}
+        {isBrowser && !isChrome && !isFirefox && !isSafari && !isIE && !isEdge && (
+          <DetectingMessage variants={phraseVars} initial="start" animate="end">
+            I don't know what browers you are coming with.. haha..
           </DetectingMessage>
         )}
         {isBrowser && (

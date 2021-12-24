@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import TopNav from "../../components/TopNav";
 import { motion } from "framer-motion";
@@ -6,51 +6,61 @@ import youTubeSignIn from "../../assets/youTubeSignIn.png";
 import slack from "../../assets/slack.png";
 import noImage from "../../assets/noImage.jpeg";
 import gallery from "../../assets/gallery.png";
-import Project from "../../components/ideas/Project";
-import Business from "../../components/ideas/Business";
+import Project from "../../components/mobile/ideas/MobProject";
+import Business from "../../components/mobile/ideas/MobBusiness";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
 import "../../styles/ideas.css";
 import SwiperCore, { EffectCoverflow, Pagination } from "swiper";
+import {
+  AiOutlineDollarCircle,
+  AiOutlineFundProjectionScreen,
+} from "react-icons/ai";
 
 SwiperCore.use([EffectCoverflow, Pagination]);
 
 const conVars = {
   start: { opacity: 0, y: 15 },
   end: { opacity: 1, y: 0, transition: { duration: 1 } },
-  leaving: { opacity: 0, y: -15, transition: { duration: 0.5 } },
+  leaving: { opacity: 0, transition: { duration: 0.5 } },
 };
 
-const MobIdeas = () => {
+const modalVars = {
+  start: { opacity: 0 },
+  end: { opacity: 1, transition: { duration: 0.5 } },
+  leaving: { opacity: 0, transition: { duration: 0.5 } },
+};
+
+const Ideas = () => {
+  const [business, setBusiness] = useState(false);
+  const [project, setProject] = useState(false);
+  const [modal, setModal] = useState(false);
+
   const projectObj = [
     {
       img: youTubeSignIn,
       name: "YouTube Clone",
       description:
         "Building CRUD, and OAuth (Github and Kakao) with vanilla Javascript, Node.js, MongoDB, and PUG",
-      tech: "Javascript, Node.js, MongoDB, PUG",
       link: "https://github.com/phainestha1/wetube",
     },
     {
       img: slack,
       name: "Slack Clone",
       description: "Realtime Chatting System with React and Firebase",
-      tech: "React, Firebase",
       link: "https://github.com/phainestha1/nwitter",
     },
     {
       img: gallery,
       name: "Gallery Daydream",
       description: "My little gallery built with React",
-      tech: "React",
       link: "https://phainestha1.github.io/gallery",
     },
     {
       img: noImage,
       name: "Momentum Clone",
       description: "Cloning Momentum chrome app with vanilla Javascript",
-      tech: "Javascript",
       link: "https://github.com/phainestha1/mantra",
     },
   ];
@@ -93,18 +103,49 @@ const MobIdeas = () => {
     },
   ];
 
+  const openBusiness = () => {
+    setModal(true);
+    setBusiness(true);
+  };
+  const openProject = () => {
+    setModal(true);
+    setProject(true);
+  };
+  const closeModal = () => {
+    setModal(false);
+    setBusiness(false);
+    setProject(false);
+  };
+
   return (
     <Container variants={conVars} initial="start" animate="end" exit="leaving">
       <TopSection>
         <TopNav />
       </TopSection>
       <BodySection>
-        <BodyLeft>
-          <Section>
-            <Title>
-              <h1>Business Insights</h1>
-            </Title>
-            <Description>
+        <Title onClick={openBusiness}>
+          <h1>Business</h1>
+          <IconTitle>
+            <AiOutlineDollarCircle />
+          </IconTitle>
+        </Title>
+        <Title onClick={openProject}>
+          <h1>Projects</h1>
+          <IconTitle>
+            <AiOutlineFundProjectionScreen />
+          </IconTitle>
+        </Title>
+      </BodySection>
+      {modal && (
+        <ModalBackground
+          onClick={closeModal}
+          variants={modalVars}
+          initial="start"
+          animate="end"
+          exit="leaving"
+        >
+          {business && (
+            <ModalSection>
               <Swiper
                 effect={"coverflow"}
                 grabCursor={true}
@@ -126,13 +167,10 @@ const MobIdeas = () => {
                   </SwiperSlide>
                 ))}
               </Swiper>
-            </Description>
-          </Section>
-          <Section>
-            <Title>
-              <h1>Projects</h1>
-            </Title>
-            <Description>
+            </ModalSection>
+          )}
+          {project && (
+            <ModalSection>
               <Swiper
                 effect={"coverflow"}
                 grabCursor={true}
@@ -154,10 +192,10 @@ const MobIdeas = () => {
                   </SwiperSlide>
                 ))}
               </Swiper>
-            </Description>
-          </Section>
-        </BodyLeft>
-      </BodySection>
+            </ModalSection>
+          )}
+        </ModalBackground>
+      )}
     </Container>
   );
 };
@@ -173,38 +211,48 @@ const TopSection = styled.div`
   top: 0;
   background-color: #f5f5f7;
   opacity: 0.8;
-  z-index: 999;
 `;
 const BodySection = styled.div`
   display: flex;
   flex-direction: row;
-  padding-top: 20px;
-  height: 100%;
-`;
-const BodyLeft = styled.div`
-  display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 100%;
-`;
-const Description = styled.div`
-  margin: 5px 0 20px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-const Section = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin-top: 15px;
 `;
 const Title = styled.div`
-  font-size: 40px;
+  font-size: 25px;
   font-weight: 300;
   text-align: center;
+  margin: 0 40px;
+  transition: 0.2s;
+  cursor: pointer;
+  :hover {
+    opacity: 0.5;
+    transform: scale(1.1);
+  }
+  h1 {
+    margin-bottom: 15px;
+  }
+`;
+const IconTitle = styled.div`
+  font-size: 55px;
+`;
+const ModalBackground = styled(motion.div)`
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(211, 211, 211, 0.5);
+`;
+const ModalSection = styled(motion.div)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 80%;
 `;
 
-export default MobIdeas;
+export default Ideas;

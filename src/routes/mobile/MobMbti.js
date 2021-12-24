@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import styled from "styled-components";
 import TopNav from "../../components/TopNav";
-import PoliticsModal from "../../components/mbti/PoliticsModal";
-import DesignModal from "../../components/mbti/DesignModal";
-import CommunicationModal from "../../components/mbti/CommunicationModal";
-import ProjectModal from "../../components/mbti/ProjectModal";
-import ProgrammingModal from "../../components/mbti/ProgrammingModal";
+import MobPoliticsModal from "../../components/mobile/mbti/MobPoliticsModal";
+import MobDesignModal from "../../components/mobile/mbti/MobDesignModal";
+import MobCommunicationModal from "../../components/mobile/mbti/MobCommunicationModal";
+import MobProjectModal from "../../components/mobile/mbti/MobProjectModal";
+import MobProgrammingModal from "../../components/mobile/mbti/MobProgrammingModal";
 
 const conVars = {
   start: { opacity: 0, y: 15 },
@@ -147,11 +147,11 @@ const MobMbti = () => {
             exit="leaving"
           >
             <ModalBackground onClick={closeModal}>
-              {modalPolitics && <PoliticsModal />}
-              {modalDesign && <DesignModal />}
-              {modalCommunication && <CommunicationModal />}
-              {modalProject && <ProjectModal />}
-              {modalProgramming && <ProgrammingModal />}
+              {modalPolitics && <MobPoliticsModal />}
+              {modalDesign && <MobDesignModal />}
+              {modalCommunication && <MobCommunicationModal />}
+              {modalProject && <MobProjectModal />}
+              {modalProgramming && <MobProgrammingModal />}
             </ModalBackground>
           </ModalSection>
         )}

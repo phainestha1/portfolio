@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { AiOutlineGithub } from "react-icons/ai";
 
-const Project = (project) => {
+const MobProject = (project) => {
   return (
     <Container>
       <Top>
@@ -26,11 +26,12 @@ const Project = (project) => {
 };
 
 const Container = styled.div`
-  width: 55%;
-  height: 65%;
+  width: 90%;
+  height: 85%;
   border-radius: 8px;
   margin: 10px;
   background-color: #fff;
+  overflow-y: scroll;
   transition: 0.4s;
   :hover {
     transform: scale(1.1);
@@ -83,7 +84,6 @@ const Bottom = styled.div`
 `;
 const Left = styled.div`
   width: 10%;
-  text-align: center;
 `;
 const Right = styled.div`
   display: flex;
@@ -92,4 +92,4 @@ const Right = styled.div`
   text-align: left;
 `;
 
-export default Project;
+export default MobProject;
