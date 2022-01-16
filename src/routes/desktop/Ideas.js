@@ -8,6 +8,8 @@ import noImage from "../../assets/noImage.jpeg";
 import gallery from "../../assets/gallery.png";
 import Project from "../../components/ideas/Project";
 import Business from "../../components/ideas/Business";
+import moderngram from "../../assets/moderngram.png";
+import samyangflying from "../../assets/samyangflying.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
@@ -38,6 +40,20 @@ const Ideas = () => {
   const [modal, setModal] = useState(false);
 
   const projectObj = [
+    {
+      img: samyangflying,
+      name: "Samyang-Flying Team Project",
+      description:
+        "Frontend Role. Building a CRM application between Samyang and their clients in order to manage promotions. ",
+      link: "https://github.com/phainestha1/code-project",
+    },
+    {
+      img: moderngram,
+      name: "Instagram Clone",
+      description:
+        "100% self coding using MERN stack. Full stack, CRUD, OAUTH, image retouching, Direct Message and so on.",
+      link: "https://github.com/phainestha1/moderngram",
+    },
     {
       img: youTubeSignIn,
       name: "YouTube Clone",
