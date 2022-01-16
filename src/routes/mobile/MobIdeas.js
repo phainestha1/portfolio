@@ -4,7 +4,7 @@ import TopNav from "../../components/TopNav";
 import { motion } from "framer-motion";
 import youTubeSignIn from "../../assets/youTubeSignIn.png";
 import slack from "../../assets/slack.png";
-import noImage from "../../assets/noImage.jpeg";
+import mantra from "../../assets/mantra.png";
 import moderngram from "../../assets/moderngram.png";
 import samyangflying from "../../assets/samyangflying.png";
 import gallery from "../../assets/gallery.png";
@@ -74,7 +74,7 @@ const Ideas = () => {
       link: "https://phainestha1.github.io/gallery",
     },
     {
-      img: noImage,
+      img: mantra,
       name: "Momentum Clone",
       description: "Cloning Momentum chrome app with vanilla Javascript",
       link: "https://github.com/phainestha1/mantra",

@@ -107,8 +107,8 @@ const ProjectModal = () => {
           </ChapterTitle>
           <Description>
             <h1>
-              Prospect all aspects of your project with honesty, teamwork, and
-              openmind.
+              Get rid of bottlenecks and Prospect all aspects of your project
+              with honesty, teamwork, and openmind.
             </h1>
           </Description>
         </ChapterBody>

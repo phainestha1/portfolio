@@ -17,7 +17,6 @@ const App = () => {
     query: "(min-width: 1224px)",
   });
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
-  // const isBigScreen = useMediaQuery({ query: "(min-width: 1824px)" });
 
   return (
     <AnimatePresence exitBeforeEnter initial={false}>

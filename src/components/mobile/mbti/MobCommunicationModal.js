@@ -64,8 +64,10 @@ const MobCommunicationModal = () => {
               <Image src="https://upload.wikimedia.org/wikipedia/en/0/05/Toastmasters_2011.png" />
             </div>
             <h1>
-              When a new semester started, I decided to go outside and found a
-              speech club, Toastmasters international. I was the only Asian in
+              I was so overwhelmed and I had to overcome it. Fortunately, I
+              could find a way to solve the problem thorough communication. When
+              a new semester started, I decided to go outside and participate in
+              a speech club, Toastmasters international. I was the only Asian in
               the club, and maybe the first Asian in the history of the club 😄.
               Speaking in front of audiences was painful. Also in my case,
               speaking foreign language doubled the damage. My ears was getting
@@ -84,12 +86,11 @@ const MobCommunicationModal = () => {
             </h1>
             <h1>
               Without opening the door to club room, and motivations from my
-              friends, I might not be able to strengthen my communication skill.
-              On the basis of the experience, I always push myself to meet new
-              people and new environment. Yes nothing is same, and it is always
-              nervous to do something new. But I can approach first. My
-              communication is opening the door, approach first, and not giving
-              up.
+              friends, I would not survive. On the basis of the experience, I
+              always push myself to meet new people and new environment. Yes
+              nothing is same, and it is always nervous to do something new. But
+              I can approach first. My communication is opening the door,
+              approach first, and not giving up.
             </h1>
           </Description>
         </ChapterBody>
@@ -99,7 +100,9 @@ const MobCommunicationModal = () => {
             <h1>In One Line</h1>
           </ChapterTitle>
           <Description>
-            <h1>I know it's hard. But real braveness is to show your mind.</h1>
+            <h1>
+              I know it's hard. But the real braveness will make you survive.
+            </h1>
           </Description>
         </ChapterBody>
       </BodySection>

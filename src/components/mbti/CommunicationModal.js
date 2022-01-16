@@ -37,11 +37,11 @@ const CommunicationModal = () => {
                 <h1>Click Me!</h1>
               </Link>
               <h1>
-                Being multilingual is a good thing and really helpful to talk
-                with people from diverse places. No doubt. But we are still in
-                problems of communications and sometimes really do not know what
-                to do. What makes us communicate in real meaning? Here is my
-                attitude and I hope you will agree with it. 😊
+                If communication is about giving and taking information by using
+                languages, being a multilingual will be really helpful. No
+                doubt. But in this part, I would say my own definition what my
+                communication is. What makes us communicate in real meaning?
+                Here is my attitude and I hope you will agree with it. 😊
               </h1>
             </Description>
           </Left>
@@ -54,18 +54,20 @@ const CommunicationModal = () => {
           <Description>
             <h1>
               Honestly, my first semester in Mississppi was total failure. Even
-              I was in the US, it was impossible for me to talk with someone and
-              I even could not order a Subway sandwitch in the way I want. Have
-              you ever tried a sandwitch only with meat and spinach? I never
-              forget the moment that the clerk told me that "Hey.. Are you
-              sure?".
+              I was in the US, I thought myself I can't speak English well, and
+              it was even impossible to order a Subway sandwitch in the way I
+              want. Have you ever tried a sandwitch only with teriyaki chicken
+              and spinach? I would never forget the moment that the clerk told
+              me that "Hey.. Are you sure?".
             </h1>
             <div>
               <Image src="https://upload.wikimedia.org/wikipedia/en/0/05/Toastmasters_2011.png" />
             </div>
             <h1>
-              When a new semester started, I decided to go outside and found a
-              speech club, Toastmasters international. I was the only Asian in
+              I was so overwhelmed and I had to overcome it. Fortunately, I
+              could find a way to solve the problem thorough communication. When
+              a new semester started, I decided to go outside and participate in
+              a speech club, Toastmasters international. I was the only Asian in
               the club, and maybe the first Asian in the history of the club 😄.
               Speaking in front of audiences was painful. Also in my case,
               speaking foreign language doubled the damage. My ears was getting
@@ -84,12 +86,11 @@ const CommunicationModal = () => {
             </h1>
             <h1>
               Without opening the door to club room, and motivations from my
-              friends, I might not be able to strengthen my communication skill.
-              On the basis of the experience, I always push myself to meet new
-              people and new environment. Yes nothing is same, and it is always
-              nervous to do something new. But I can approach first. My
-              communication is opening the door, approach first, and not giving
-              up.
+              friends, I would not survive. On the basis of the experience, I
+              always push myself to meet new people and new environment. Yes
+              nothing is same, and it is always nervous to do something new. But
+              I can approach first. My communication is opening the door,
+              approach first, and not giving up.
             </h1>
           </Description>
         </ChapterBody>
@@ -99,7 +100,9 @@ const CommunicationModal = () => {
             <h1>In One Line</h1>
           </ChapterTitle>
           <Description>
-            <h1>I know it's hard. But real braveness is to show your mind.</h1>
+            <h1>
+              I know it's hard. But the real braveness will make you survive.
+            </h1>
           </Description>
         </ChapterBody>
       </BodySection>
