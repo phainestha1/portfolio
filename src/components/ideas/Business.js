@@ -1,17 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 
-const Business = (business) => {
+const Business = ({ business }) => {
   return (
     <Container>
       <Top>
-        <Title>⭐️ {business.business.title}</Title>
+        <Title>⭐️ {business.title}</Title>
       </Top>
       <Middle>
-        <Summary>{business.business.summary}</Summary>
+        <Summary>{business.summary}</Summary>
       </Middle>
       <Bottom>
-        <Tech>{business.business.tech}</Tech>
+        <Tech>{business.tech}</Tech>
       </Bottom>
     </Container>
   );

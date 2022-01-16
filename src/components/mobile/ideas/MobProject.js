@@ -2,23 +2,23 @@ import React from "react";
 import styled from "styled-components";
 import { AiOutlineGithub } from "react-icons/ai";
 
-const MobProject = (project) => {
+const MobProject = ({ project }) => {
   return (
     <Container>
       <Top>
-        <ProjectImage src={project.project.img} alt={project.project.name} />
+        <ProjectImage src={project.img} alt={project.name} />
       </Top>
       <Middle>
-        <Title>{project.project.name}</Title>
+        <Title>{project.name}</Title>
       </Middle>
       <Bottom>
         <Left>
-          <a href={project.project.link}>
+          <a href={project.link}>
             <AiOutlineGithub />
           </a>
         </Left>
         <Right>
-          <h1>{project.project.description}</h1>
+          <h1>{project.description}</h1>
         </Right>
       </Bottom>
     </Container>

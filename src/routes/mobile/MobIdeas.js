@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import youTubeSignIn from "../../assets/youTubeSignIn.png";
 import slack from "../../assets/slack.png";
 import noImage from "../../assets/noImage.jpeg";
+import moderngram from "../../assets/moderngram.png";
+import samyangflying from "../../assets/samyangflying.png";
 import gallery from "../../assets/gallery.png";
 import Project from "../../components/mobile/ideas/MobProject";
 import Business from "../../components/mobile/ideas/MobBusiness";
@@ -38,6 +40,20 @@ const Ideas = () => {
   const [modal, setModal] = useState(false);
 
   const projectObj = [
+    {
+      img: samyangflying,
+      name: "Samyang-Flying Team Project",
+      description:
+        "Frontend Role. Building a CRM application between Samyang and their clients in order to manage promotions. ",
+      link: "https://github.com/phainestha1/code-project",
+    },
+    {
+      img: moderngram,
+      name: "Instagram Clone",
+      description:
+        "100% self coding using MERN stack. Full stack, CRUD, OAUTH, image retouching, Direct Message and so on.",
+      link: "https://github.com/phainestha1/moderngram",
+    },
     {
       img: youTubeSignIn,
       name: "YouTube Clone",
