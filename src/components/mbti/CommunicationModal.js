@@ -192,7 +192,6 @@ const Description = styled.div`
 const Left = styled.div`
   padding-right: 10px;
 `;
-
 const Image = styled.img`
   width: 200px;
   height: 200px;

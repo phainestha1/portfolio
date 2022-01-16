@@ -62,7 +62,6 @@ const MobMbti = () => {
   const closeProgramming = () => {
     setProgramming(false);
   };
-
   const closeModal = () => {
     setModal(false);
     setModalPolitics(false);
